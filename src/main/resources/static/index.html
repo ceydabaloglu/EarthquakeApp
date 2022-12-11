@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://java.sun.com/JSP/Page">
+
+<head>
+    <meta charset="UTF-8">
+    <title>deneme</title>
+</head>
+<body>
+  <form method="POST" action="/getEarthquakeData" >
+    <label type="enddate" id="enddate-id" name="enddate"> Time </label>
+    <input type="enddate" id="enddate" name="enddate"/>
+    <label type="country" id="country-id" name="country"/> Country</label>
+    <input type="country" id="country" name="country"/>
+    <button type="submiy">Find Earthquake</button>
+  </form>
+</body>
+
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20220924</version>
+</dependency>
