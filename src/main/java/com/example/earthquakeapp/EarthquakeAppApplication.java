@@ -8,6 +8,8 @@ public class EarthquakeAppApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(EarthquakeAppApplication.class, args);
+
+
     }
 
 }

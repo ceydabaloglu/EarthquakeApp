@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class EarthquakeQueryService {
     public EarthquakeQueryService(URL url){
         Url = url;
     }
+
     public List<Earthquake> findEarthquakes(){
         List<Earthquake> elist = new ArrayList<Earthquake>();
         return elist;
@@ -32,13 +34,26 @@ public class EarthquakeQueryService {
         }
         return sb.toString();
     }
+
+    //Try connection
     public String HttpResponse (){
-        String Response =" " ;
-        //HttpURLConnection  conn = null;
-        //InputStream istream = null;
-        
+        String Response ="Turkei " ;
+        try {
+            HttpURLConnection  conn = (HttpURLConnection) Url.openConnection() ;
+            conn.setRequestMethod("GET");
+            conn.connect();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        InputStream istream = null;
+
+
         try{
-            URL x = new URL("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=" + "2022-01-01" +"&endtime=" +"2022-01-02");
+            var date = LocalDate.now();
+            System.out.println(date.toString());
+            var startDate = date.minusDays(100);
+            System.out.println(startDate.toString());
+            URL x = new URL("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=" + startDate.toString() +"&endtime=" + date.toString());
             HttpURLConnection conn = (HttpURLConnection) x.openConnection();
             conn.connect();
             int responseCode = conn.getResponseCode();
