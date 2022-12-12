@@ -4,20 +4,26 @@
 <spring:url var="getEarthquakeByDate" value="/getEarthquakeByDate"></spring:url>
 <head>
     <meta charset="UTF-8">
-    <title>deneme</title>
+    <title>Earthquake</title>
 </head>
 <body>
-  <form  action="${getEarthquakeByDate}" >
-    <label type="enddate" id="enddate-id" > Time </label>
+  <form  action=/getEarthquakeByDate" >
+    <header>EARTHQUAKE </header>
+    <label type="enddate" id="enddate-id"  style="color:blue"> Time </label>
     <input type="enddate" id="enddate-inputid" name="enddate"/>
-    <label type="country" id="country-id" /> Country</label>
+    <label type="country" id="country-id" style="color:blue"/> Country</label>
     <input type="country" id="country" name="country"/>
-    <button type="submit">Find Earthquake</button>
+    <button type="submit" onclick="alert" style="accent-color: aqua">Find Earthquake</button>
   </form>
 </body>
 
-<dependency>
-    <groupId>org.json</groupId>
-    <artifactId>json</artifactId>
-    <version>20220924</version>
-</dependency>
+<style>
+    header, footer {
+        background: aquamarine ;
+        height: 6vh;
+        padding: 2em;
+        color: cornflowerblue;
+        text-align: center;
+        font-size: 25px;
+    }
+</style>

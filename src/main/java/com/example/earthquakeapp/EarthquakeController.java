@@ -9,15 +9,11 @@ public class EarthquakeController {
     @RequestMapping("/getEarthquakeByDate")
     @ResponseBody
     public String GetEarthquake(@RequestParam("enddate") String enddate, @RequestParam("country") String country , Model m){
-        m.addAttribute("deneme yapıyorum");
-        return "index";
+        EarthquakeQueryService service =new EarthquakeQueryService();
+        return service.HttpResponseFromData(enddate ,country);
     }
 
-    @GetMapping("//getEarthquakeByDate")
-    public String showData(@PathVariable("enddate") String Enddate, Model m){
-        m.addAttribute("deneme yapıyorum");
-        return "index";
-    }
+
 
 }
 
