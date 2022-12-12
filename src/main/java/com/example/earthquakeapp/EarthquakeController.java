@@ -8,12 +8,10 @@ import org.springframework.web.bind.annotation.*;
 public class EarthquakeController {
     @RequestMapping("/getEarthquakeByDate")
     @ResponseBody
-    public String GetEarthquake(@RequestParam("enddate") String enddate, @RequestParam("country") String country , Model m){
+    public String GetEarthquake(@RequestParam("enddate") String enddate, @RequestParam("country") String country){
         EarthquakeQueryService service =new EarthquakeQueryService();
         return service.HttpResponseFromData(enddate ,country);
     }
-
-
 
 }
 

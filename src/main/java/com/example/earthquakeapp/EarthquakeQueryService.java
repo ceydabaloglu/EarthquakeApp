@@ -1,6 +1,5 @@
 package com.example.earthquakeapp;
 
-import org.apache.coyote.Response;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
